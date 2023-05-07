@@ -3,5 +3,9 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.products, name='products'),
+    # 4th section of Accessories
+    path('keyboards-mices/', views.keyboards_mice, name='keyboards_mice'),
+
+    # certain product url
+    path('keyboards-mices/<slug:product_slug>', views.certain_product, name='certain_product')
 ]

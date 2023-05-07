@@ -17,6 +17,7 @@ class Product(models.Model):
     # category on_delete=PROTECT means you can't delete category filled with products
     category = models.ForeignKey(Category, related_name='products', on_delete=models.PROTECT)
     name = models.CharField(max_length=300, db_index=True)
+    multiple_types_helper = models.CharField(max_length=100, blank=True, null=True)
     tech_specs = models.ManyToManyField('TechSpec', related_name='tech_specs', blank=True)
     slug = models.SlugField(max_length=200, db_index=True)
     short_desc = models.TextField(max_length=1000, blank=True, null=True)

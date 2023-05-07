@@ -25,7 +25,7 @@ urlpatterns = [
     path('', include('mainpage.urls')),
 
     # Path of products
-    path('section', include('products.urls')),
+    path('', include('products.urls')),
 ]
 
 if settings.DEBUG:

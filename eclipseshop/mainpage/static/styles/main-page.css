@@ -19,11 +19,10 @@
   bottom: 10px;
   width: auto;
   height: auto;
-  cursor: pointer;
 }
 
 .u-section-1 .u-image-1 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url("/static/images/keyboard-main.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url("images/aukey-rgb-mechanical-keyboard-review.jpg");
   background-position: 50% 50%;
 }
 
@@ -52,7 +51,7 @@
 }
 
 .u-section-1 .u-image-2 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("/static/images/tomahawk-main.jpg");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("images/tomahawk-a1-m1-usp1-mobile-v2.jpg");
   background-position: 50% 50%;
 }
 
@@ -85,7 +84,7 @@
 }
 
 .u-section-1 .u-image-3 {
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/static/images/resize.webp");
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("images/resize.webp");
   background-position: 50% 50%;
 }
 
