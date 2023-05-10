@@ -3,9 +3,8 @@ from .models import Category, Product
 
 # KEYBOARDS & MICE 4th section of Accessories
 def keyboards_mice(request):
-
     section_name = 'KEYBOARDS & MICE'
-    products = Product.objects.filter(available=True)
+    products = Product.objects.filter(category__name=section_name, available=True)
     context = {'section_name': section_name,
                'products': products,
                }

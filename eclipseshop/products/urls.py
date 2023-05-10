@@ -7,5 +7,5 @@ urlpatterns = [
     path('keyboards-mices/', views.keyboards_mice, name='keyboards_mice'),
 
     # certain product url
-    path('keyboards-mices/<slug:product_slug>', views.certain_product, name='certain_product')
+    path('products/<slug:product_slug>/', views.certain_product, name='certain_product')
 ]
