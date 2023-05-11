@@ -23,6 +23,8 @@ class Product(models.Model):
     short_desc = models.TextField(max_length=1000, blank=True, null=True)
     full_desc = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+    carousel_2_img = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+    carousel_3_img = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField()
     available = models.BooleanField(default=True)
@@ -40,7 +42,8 @@ class Product(models.Model):
 class TechSpec(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     description = models.TextField(max_length=1000, blank=True, null=True)
+    product_helper = models.TextField(max_length=1000, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Spec - {self.name}'
+        return f'{self.name} -- {self.description}, products: {self.product_helper}'

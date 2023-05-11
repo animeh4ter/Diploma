@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
+    <title>ES - {{product.name}}</title>
     <title>Certain Product</title>
     <link rel="stylesheet" href="{% static 'styles/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'styles/certain-product.css' %}" media="screen">
@@ -45,7 +46,7 @@
             </div>
             <div class="u-carousel-item u-gallery-item u-carousel-item-2">
               <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src={{product.image.url}}>
+                <img class="u-back-image u-expanded" src={{product.carousel_2_img.url}}>
               </div>
               <div class="u-over-slide u-over-slide-2">
                 <h3 class="u-gallery-heading">Sample Title</h3>
@@ -54,7 +55,7 @@
             </div>
             <div class="u-carousel-item u-gallery-item u-carousel-item-3" data-image-width="2836" data-image-height="1875">
               <div class="u-back-slide">
-                <img class="u-back-image u-expanded" src={{product.image.url}}>
+                <img class="u-back-image u-expanded" src={{product.carousel_3_img.url}}>
               </div>
               <div class="u-over-slide u-over-slide-3">
                 <h3 class="u-gallery-heading">Sample Title</h3>
@@ -91,10 +92,10 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
               <img class="u-carousel-thumbnail-image u-image" src={{product.image.url}}>
             </li>
             <li class="u-carousel-thumbnail u-carousel-thumbnail-2" data-u-target="#carousel-e131" data-u-slide-to="1">
-              <img class="u-carousel-thumbnail-image u-image" src={{product.image.url}}>
+              <img class="u-carousel-thumbnail-image u-image" src={{product.carousel_2_img.url}}>
             </li>
             <li class="u-carousel-thumbnail u-carousel-thumbnail-3" data-u-target="#carousel-e131" data-u-slide-to="2">
-              <img class="u-carousel-thumbnail-image u-image" src={{product.image.url}}>
+              <img class="u-carousel-thumbnail-image u-image" src={{product.carousel_3_img.url}}>
             </li>
           </ol>
         </div>
@@ -104,7 +105,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
             <p class="u-custom-font u-font-roboto u-text u-text-2"> {{product.short_desc}}</p>
             <p class="u-custom-font u-font-roboto u-text u-text-3">${{product.price}}</p>
             <p class="u-custom-font u-font-roboto u-text u-text-4"> Approximate delivery time:</p><span class="u-border-2 u-border-grey-50 u-file-icon u-icon u-icon-circle u-text-grey-40 u-icon-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/van-certain-product.png' %}" alt=""></span>
-            <p class="u-custom-font u-font-roboto u-text u-text-grey-50 u-text-5">Today's date + week</p><span class="u-border-2 u-border-grey-50 u-file-icon u-icon u-icon-circle u-text-grey-40 u-icon-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/check-certain-product.png' %}" alt=""></span>
+            <p class="u-custom-font u-font-roboto u-text u-text-grey-50 u-text-5">{{delivery_time}}</p><span class="u-border-2 u-border-grey-50 u-file-icon u-icon u-icon-circle u-text-grey-40 u-icon-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/check-certain-product.png' %}" alt=""></span>
             <p class="u-custom-font u-font-roboto u-text u-text-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">This item is currently in stock</p>
             <a href="https://nicepage.com/ru/html-shablony" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ADD TO CART</a>
           </div>
