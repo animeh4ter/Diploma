@@ -20,7 +20,7 @@ class Product(models.Model):
     multiple_types_helper = models.CharField(max_length=100, blank=True, null=True)
     tech_specs = models.ManyToManyField('TechSpec', related_name='tech_specs', blank=True)
     slug = models.SlugField(max_length=200, db_index=True)
-    short_desc = models.TextField(max_length=1000, blank=True, null=True)
+    short_desc = models.TextField(max_length=270, blank=True, null=True)
     full_desc = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     carousel_2_img = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
@@ -32,7 +32,7 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['name', ]
+        ordering = ['category', 'name', ]
         index_together = (('id', 'slug'), )
 
     def __str__(self):

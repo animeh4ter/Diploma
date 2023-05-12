@@ -3,8 +3,8 @@ from . import views
 
 
 urlpatterns = [
-    # 4th section of Accessories
-    path('store/<slug:category_slug>/', views.keyboards_mice, name='keyboards_mice'),
+    # sections
+    path('store/<slug:category_slug>/', views.sections, name='section'),
 
     # certain product url
     path('products/<slug:product_slug>/', views.certain_product, name='certain_product')

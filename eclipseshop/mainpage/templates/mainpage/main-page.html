@@ -14,7 +14,7 @@
               <div class="u-container-layout u-container-layout-1">
                 <h2 class="u-text u-text-default u-text-1"> We're the only one with good prices!</h2>
                 <p class="u-text u-text-2"> Check out our new products from ​KEYBOARDS &amp; MICE&nbsp;section now!</p>
-                <a href="{% url 'keyboards_mice' category_slug='keyboards-mice' %}" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-4 u-radius-50 u-btn-1"> Buy Now</a>
+                <a href="{% url 'section' category_slug='keyboards-mice' %}" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-2 u-hover-custom-color-4 u-radius-50 u-btn-1"> Buy Now</a>
               </div>
             </div>
             <div class="u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-2" data-image-width="768" data-image-height="500">
@@ -66,7 +66,7 @@
                 <p class="u-gallery-text"></p>
               </div>
             </div>
-            <div class="u-effect-fade u-gallery-item" data-href="https://nicepage.com" data-target="_blank">
+            <div class="u-effect-fade u-gallery-item" data-href="{% url 'certain_product' product_slug='thermaltake-core-p6-tg' %}" data-target="_blank">
               <div class="u-back-slide" data-image-width="1280" data-image-height="720">
                 <img class="u-back-image u-expanded" src="{% static 'images/thermaltake-main.jpg' %}">
               </div>
