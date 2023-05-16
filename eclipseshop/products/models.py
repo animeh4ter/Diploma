@@ -42,8 +42,11 @@ class Product(models.Model):
 class TechSpec(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     description = models.TextField(max_length=1000, blank=True, null=True)
-    product_helper = models.TextField(max_length=1000, blank=True, null=True)
+    product_helper = models.ManyToManyField('Category', blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self):
-        return f'{self.name} -- {self.description}, products: {self.product_helper}'
+        return f'{self.name} ({self.description}), products: {", ".join(str(prod) for prod in self.product_helper.all())}'

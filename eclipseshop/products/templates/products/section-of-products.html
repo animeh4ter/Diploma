@@ -12,7 +12,11 @@
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <div class="u-black u-container-style u-expanded-width u-group u-group-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
                   <div class="u-container-layout u-container-layout-2">
+                    {% if product.image %}
                     <img class="u-expanded-width u-hover-feature u-image u-image-default u-image-1" src="{{product.image.url}}" alt="" data-image-width="750" data-image-height="582" data-href="{% url 'certain_product' product.slug %}">
+                    {% else %}
+                    <img class="u-expanded-width u-hover-feature u-image u-image-default u-image-1" src="{% static 'images/default-image.jpg' %}" alt="" data-image-width="750" data-image-height="582" data-href="{% url 'certain_product' product.slug %}">
+                    {% endif %}
                   </div>
                 </div>
                 <div class="u-border-2 u-border-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-container-style u-expanded-width u-grey-80 u-group u-group-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
