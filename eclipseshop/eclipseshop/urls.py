@@ -26,6 +26,9 @@ urlpatterns = [
 
     # Path of products
     path('', include('products.urls')),
+
+    # Path of users/reg/log
+    path('users/', include('users.urls'))
 ]
 
 if settings.DEBUG:

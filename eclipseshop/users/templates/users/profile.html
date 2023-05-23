@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="ru"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Sample Headline">
+    <meta name="description" content="">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'styles/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'styles/profile.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'uikit/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'uikit/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png",
+		"sameAs": [
+				"https://nicepage.com/website-builder",
+				"https://nicepage.com",
+				"https://nicepage.com/c/blog-posts-website-mockup"
+		]
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Profile">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="ru">
+  {% include 'products/navbar.html' %}
+    <section class="u-black u-clearfix u-valign-top-lg u-valign-top-md u-valign-top-xl u-section-1" id="sec-d647">
+      <div class="u-align-center u-border-4 u-border-grey-50 u-border-no-left u-border-no-right u-border-no-top u-container-style u-expanded-width u-group u-shading u-video u-video-cover u-video-1">
+        <div class="u-background-video u-expanded" style="filter: brightness(0.65);">
+          <div class="embed-responsive embed-responsive-1">
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/kHzJlB72u1o?playlist=kHzJlB72u1o&amp;loop=1&amp;mute=1&amp;showinfo=0&amp;controls=0&amp;start=0&amp;autoplay=1" data-autoplay="1" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <div class="u-container-layout u-container-layout-1">
+          <img class="u-image u-image-circle u-image-contain u-preserve-proportions u-image-1" src="{{user.profile_img.url}}" alt="" data-image-width="1000" data-image-height="1000">
+          <p class="u-heading-font u-text u-text-1">{{user.user_name|capfirst}}</p>
+          <a href="{% url 'logout' %}" class="u-border-2 u-border-grey-75 u-border-hover-grey-75 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-none u-radius-0 u-text-active-white u-text-grey-75 u-text-hover-grey-15 u-top-left-radius-0 u-top-right-radius-0 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Logout</a>
+        </div>
+      </div>
+      <div class="u-black u-container-style u-expanded-width u-group u-group-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+        <div class="u-container-layout u-container-layout-2">
+          <p class="u-custom-font u-heading-font u-text u-text-default u-text-2">Favourites</p>
+          <div class="u-carousel u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1" id="carousel-f035" data-interval="5000" data-u-ride="carousel">
+            <ol class="u-absolute-hcenter u-carousel-indicators u-hidden u-carousel-indicators-1">
+              <li data-u-target="#carousel-f035" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+              <li data-u-target="#carousel-f035" data-u-slide-to="1" class="u-grey-70 u-shape-circle" style="width: 10px; height: 10px;"></li>
+            </ol>
+            <div class="u-carousel-inner u-gallery-inner" role="listbox">
+              <div class="u-active u-carousel-item u-gallery-item u-carousel-item-1" data-href="Certain-Product.html">
+                <div class="u-back-slide" data-image-width="1280" data-image-height="720">
+                  <img class="u-back-image u-expanded" src="{% static 'images/maxresdefault.jpg' %}">
+                </div>
+                <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-1">
+                  <h3 class="u-gallery-heading">Sample Title</h3>
+                  <p class="u-gallery-text">Sample Text</p>
+                </div>
+              </div>
+              <div class="u-carousel-item u-gallery-item u-carousel-item-2" data-href="Certain-Product.html">
+                <div class="u-back-slide" data-image-width="1280" data-image-height="720">
+                  <img class="u-back-image u-expanded" src="{% static 'images/maxresdefault1.jpg' %}">
+                </div>
+                <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
+                  <h3 class="u-gallery-heading">Sample Title</h3>
+                  <p class="u-gallery-text">Sample Text</p>
+                </div>
+              </div>
+            </div>
+            <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1" href="#carousel-f035" role="button" data-u-slide="prev">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+              </span>
+              <span class="sr-only">
+                <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
+              </span>
+            </a>
+            <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2" href="#carousel-f035" role="button" data-u-slide="next">
+              <span aria-hidden="true">
+                <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+              </span>
+              <span class="sr-only">
+                <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+              </span>
+            </a>
+          </div>
+          <div class="u-black u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-3">
+            <div class="u-container-layout u-container-layout-3">
+              <p class="u-custom-font u-heading-font u-text u-text-default u-text-3">Account Info</p><span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/email-icon.png' %}" alt=""></span>
+              <p class="u-custom-font u-heading-font u-text u-text-4">{{user.email}}</p><span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/phone-icon.png' %}" alt=""></span>
+              <p class="u-heading-font u-text u-text-5">{{user.phone}}</p><span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/address-icon.png' %}" alt=""></span>
+              <p class="u-heading-font u-text u-text-6">{{user.address}}<br>
+                <br>
+              </p>
+              <a href="https://nicepage.online" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Manage info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="u-black u-container-style u-expanded-width u-group u-group-4">
+        <div class="u-container-layout u-container-layout-4">
+          <p class="u-heading-font u-text u-text-default u-text-7">Partnership</p>
+          <div class="u-black u-container-style u-group u-group-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+            <div class="u-container-layout u-container-layout-5">
+              <p class="u-heading-font u-text u-text-8"> Become a member to maximize your experience!<br>More you spend, the more you earn!
+              </p><span class="u-file-icon u-icon u-icon-rectangle u-text-grey-50 u-icon-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/profile-star.png' %}" alt=""></span><span class="u-file-icon u-icon u-icon-rectangle u-text-grey-50 u-icon-5" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/profile-star.png' %}" alt=""></span>
+              <p class="u-heading-font u-text u-text-9">Partnership programm is activated after the first order, all information will be sent in an email</p><span class="u-file-icon u-icon u-icon-rectangle u-text-grey-50 u-icon-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/profile-star.png' %}" alt=""></span>
+              <a href="https://nicepage.com/k/offer-html-templates" class="u-border-active-white u-border-hover-white u-border-none u-btn u-button-style u-none u-text-hover-grey-50 u-text-white u-btn-3"> Be sure to check the information about project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% include 'products/footer.html' %}
+</body></html>

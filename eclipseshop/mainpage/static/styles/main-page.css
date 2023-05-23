@@ -1,3 +1,4 @@
+
  .u-section-1 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("/static/images/background-img-v2.jpg");
   background-position: 50% 50%;
@@ -159,6 +160,14 @@
   padding: 20px;
 }
 
+.text-wrapper{
+  margin-top: 200px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+
+
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
     min-height: 979px;
@@ -275,3 +284,4 @@
     height: 1206px;
   }
 }
+
