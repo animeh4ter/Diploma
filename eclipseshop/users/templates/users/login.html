@@ -33,6 +33,44 @@
   <body class="u-body u-xl-mode" data-lang="ru">
   {% include 'products/navbar.html' %}
     <section class="u-clearfix u-image u-shading u-section-1" id="sec-bdc1" data-image-width="1920" data-image-height="1080">
+      {% if page == 'register' %}
+            <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+              <div>
+        {% if messages %}
+                {% for message in messages %}
+                        <div>
+                            <div style="text-align: center">
+                              <div class="alert alert--{{message.tags}}">
+                              <p class="alert_message" style="margin-left: 20px;">{{message}}</p>
+                               <button class="alert__close">x</button>
+                              </div>
+                            </div>
+                        </div>
+                {% endfor %}
+              {% endif %}
+         </div>
+            <div class="u-black u-form u-login-control u-form-1">
+              <form action="{% url 'register' %}" class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 30px;" method="post">
+                {% csrf_token %}
+                  {% for field in form %}
+                  <label for="username-a30d" class="u-label" style="margin-left: 17px;">{{field.label}}</label>
+                  {{ field }}
+                  {% endfor %}
+                <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <a href="#" class="u-active-grey-30 u-border-2 u-border-grey-75 u-btn u-btn-round u-btn-submit u-button-style u-grey-70 u-hover-grey-50 u-radius-3 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Register</a>
+                  <input type="submit" value="submit" class="u-form-control-hidden">
+                </div>
+                <input type="hidden" value="" name="recaptchaResponse">
+              </form>
+            </div>
+            <a href="{% url 'login-register' %}" class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-custom-font u-heading-font u-login-control u-login-create-account u-none u-text-grey-40 u-text-hover-custom-color-4 u-btn-2">Already have an account?</a>
+          </div>
+        </div>
+      </div>
+        <div class="u-black u-form u-login-control u-form-1">
+      {% else %}
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
           <div class="u-container-layout u-container-layout-1">
@@ -68,10 +106,11 @@
                 <input type="hidden" value="" name="recaptchaResponse">
               </form>
             </div>
-            <a href="https://nicepage.com/c/contact-form-html-templates" class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-custom-font u-heading-font u-login-control u-login-create-account u-none u-text-grey-40 u-text-hover-custom-color-4 u-btn-2">Don't have an account?</a>
+            <a href="{% url 'register' %}" class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-custom-font u-heading-font u-login-control u-login-create-account u-none u-text-grey-40 u-text-hover-custom-color-4 u-btn-2">Don't have an account?</a>
           </div>
         </div>
       </div>
+      {% endif %}
     </section>
   {% include 'products/footer.html' %}
 </body></html>

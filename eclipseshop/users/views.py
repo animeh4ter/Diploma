@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .forms import CustomUserCreationForm
 from .models import Profile
 
 @login_required(login_url='login-register')
@@ -40,3 +41,21 @@ def login_register(request):
 def logout_user(request):
     logout(request)
     return redirect('main-page')
+
+
+def register_user(request):
+    page = 'register'
+    form = CustomUserCreationForm(request.POST)
+    if form.is_valid():
+        user = form.save(commit=False)
+        user.username = user.username
+        user.save()
+
+        login(request, user)
+        return redirect('profile')
+
+    context = {'page': page,
+               'form': form,
+
+               }
+    return render(request, 'users/login.html', context)

@@ -99,12 +99,17 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
           </div>
           <div class="u-black u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-3">
             <div class="u-container-layout u-container-layout-3">
-              <p class="u-custom-font u-heading-font u-text u-text-default u-text-3">Account Info</p><span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/email-icon.png' %}" alt=""></span>
+              <p class="u-custom-font u-heading-font u-text u-text-default u-text-3">Account Info</p>
+              {% if user.email %}
+              <span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/email-icon.png' %}" alt=""></span>
               <p class="u-custom-font u-heading-font u-text u-text-4">{{user.email}}</p><span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/phone-icon.png' %}" alt=""></span>
               <p class="u-heading-font u-text u-text-5">{{user.phone}}</p><span class="u-file-icon u-hidden-xs u-icon u-icon-rectangle u-text-grey-50 u-icon-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/address-icon.png' %}" alt=""></span>
               <p class="u-heading-font u-text u-text-6">{{user.address}}<br>
                 <br>
               </p>
+              {% else %}
+              <p class="u-custom-font u-heading-font u-text u-text-6" style="margin-top: 15px;">You have not entered your information yet, you can do it by clicking on the button below</p>
+              {% endif %}
               <a href="https://nicepage.online" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Manage info</a>
             </div>
           </div>
