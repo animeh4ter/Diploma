@@ -4,12 +4,12 @@ from django.contrib import messages
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, UpdateProfileForm
 from .models import Profile
 
 @login_required(login_url='login-register')
 def profile(request):
-    cur_profile = Profile.objects.get(user_id=request.user)
+    cur_profile = request.user.profile
     context = {
         'user': cur_profile,
     }
@@ -44,6 +44,9 @@ def logout_user(request):
 
 
 def register_user(request):
+    if request.user.is_authenticated:
+        return redirect('profile')
+
     page = 'register'
     form = CustomUserCreationForm(request.POST)
     if form.is_valid():
@@ -59,3 +62,20 @@ def register_user(request):
 
                }
     return render(request, 'users/login.html', context)
+
+
+@login_required(login_url='login-register')
+def edit_account_info(request):
+    cur_profile = request.user.profile
+    form = UpdateProfileForm(instance=cur_profile)
+
+    if request.method == 'POST':
+        form = UpdateProfileForm(request.POST, request.FILES, instance=cur_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+        else:
+            messages.error(request, 'Invalid input')
+
+    context = {'form': form}
+    return render(request, 'users/profile_form.html', context)

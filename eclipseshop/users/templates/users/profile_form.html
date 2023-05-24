@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="ru"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="{% static 'styles/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'styles/profile_form.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{static 'uikit/jquery_form.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{static 'uikit/nicepage_form.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png",
+		"sameAs": [
+				"https://nicepage.com/website-builder",
+				"https://nicepage.com",
+				"https://nicepage.com/c/blog-posts-website-mockup"
+		]
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="profile_form">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="ru">
+  {% include 'products/navbar.html' %}
+    <section class="u-clearfix u-image u-shading u-section-1" id="sec-bdc1" data-image-width="1920" data-image-height="1080">
+      <div class="u-clearfix u-sheet u-valign-top u-sheet-1">
+        <div class="u-align-center u-container-style u-expanded-width u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+              <div>
+        {% if messages %}
+                {% for message in messages %}
+                        <div>
+                            <div style="text-align: center">
+                              <div class="alert alert--{{message.tags}}">
+                              <p class="alert_message" style="margin-left: 20px; color: red;">{{message}}</p>
+                              </div>
+                            </div>
+                        </div>
+                {% endfor %}
+              {% endif %}
+         </div>
+            <div class="u-black u-form u-login-control u-form-1">
+              <form action="{% url 'edit-account' %}" class="u-clearfix u-form-custom-backend u-form-spacing-20 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 30px;" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                  <label for="username-a30d" class="u-label" style="margin-left: 17px;">{{field.label}}:</label>
+                  {{ field }}
+                  {% endfor %}
+                  <div class="u-align-center u-form-group u-form-submit u-label-none">
+                  <input type="submit" value="Update Info" class="u-active-grey-30 u-border-2 u-border-grey-75 u-btn u-btn-round u-btn-submit u-button-style u-grey-70 u-hover-grey-50 u-radius-3 u-btn-1">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% include 'products/footer.html' %}
+</body></html>
