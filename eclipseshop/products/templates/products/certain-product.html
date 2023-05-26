@@ -9,8 +9,8 @@
     <title>Certain Product</title>
     <link rel="stylesheet" href="{% static 'styles/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static 'styles/certain-product.css' %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static 'uikit/jquery.js' %}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static 'uikit/nicepage.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
@@ -131,7 +131,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
             <p class="u-custom-font u-font-roboto u-text u-text-4"> Approximate delivery time:</p><span class="u-border-2 u-border-grey-50 u-file-icon u-icon u-icon-circle u-text-grey-40 u-icon-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/van-certain-product.png' %}" alt=""></span>
             <p class="u-custom-font u-font-roboto u-text u-text-grey-50 u-text-5">{{delivery_time}}</p><span class="u-border-2 u-border-grey-50 u-file-icon u-icon u-icon-circle u-text-grey-40 u-icon-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><img src="{% static 'images/check-certain-product.png' %}" alt=""></span>
             <p class="u-custom-font u-font-roboto u-text u-text-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">This item is currently in stock</p>
-            <a href="https://nicepage.com/ru/html-shablony" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">ADD TO CART</a>
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+              {{cart_product_form}}
+              {% csrf_token %}
+              <input type="submit" value="Add to cart" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-btn-1">
+            </form>
           </div>
         </div>
       </div>

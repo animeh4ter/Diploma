@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;" lang="ru"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Eclipse store - Cart</title>
+    <link rel="stylesheet" href="{% static 'styles/cart.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'styles/nicepage.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png",
+		"sameAs": [
+				"https://nicepage.com/website-builder",
+				"https://nicepage.com",
+				"https://nicepage.com/c/blog-posts-website-mockup"
+		]
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="cart">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="ru">
+    {% include 'products/navbar.html' %}
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-4e0d" data-image-width="1980" data-image-height="1200" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+      <div class="u-clearfix u-sheet u-sheet-1"><!--products--><!--products_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/products_options_json-->
+        <div class="u-expanded-width u-pagination-center u-products u-products-1">
+          <div class="u-repeater u-repeater-1"><!--product_item-->
+              {% if cart %}
+              {% for item in cart %}
+                {% with product=item.product %}
+            <div class="u-align-center u-container-style u-opacity u-opacity-70 u-products-item u-repeater-item u-shape-rectangle u-repeater-item-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+              <div class="u-container-layout u-similar-container u-valign-top-sm u-container-layout-1">
+                <div class="u-border-2 u-border-custom-color-4 u-border-no-left u-border-no-right u-border-no-top u-container-style u-expanded-width u-grey-80 u-group u-shape-rectangle u-group-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                  <div class="u-container-layout u-container-layout-2">
+                    <p class="u-align-center u-heading-font u-text u-text-1">{{product.name}}</p>
+                    <div class="u-black u-container-style u-group u-shape-rectangle u-group-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+                      <div class="u-container-layout u-container-layout-3">
+                        <img class="u-absolute-hcenter-md u-absolute-hcenter-sm u-absolute-hcenter-xs u-expanded u-hover-feature u-image u-image-default u-image-1" src="{{product.image.url}}" alt="" data-image-width="750" data-image-height="582" data-href="{% url 'certain_product' product.slug %}">
+                      </div>
+                    </div><span class="u-file-icon u-icon u-text-white u-icon-1"><a href="{% url 'cart:cart_remove' product.id%}"><img src="{% static 'images/close.png' %}" alt=""></a></span>
+                    <p class="u-align-left u-heading-font u-text u-text-2">Unit price: ${{item.price}}</p>
+                    <p class="u-align-left u-heading-font u-text u-text-3">Quantity: {{item.quantity}}</p>
+                    <p class="u-align-right u-heading-font u-text u-text-custom-color-4 u-text-4">${{item.total_price}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+              {% endwith %}
+              {% endfor %}
+          </div>
+          <div class="u-list-control"></div>
+        </div><!--/products-->
+        <p class="u-align-right u-text u-text-13">Total price: ${{cart.get_total_price}}</p>
+        <a href="{% url 'main-page' %}" class="u-active-grey-30 u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-grey-70 u-hover-grey-50 u-radius-3 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Back</a>
+      </div>
+        {% else %}
+        <h1>Your cart is empty</h1>
+        <a href="{% url 'main-page' %}" class="u-active-grey-30 u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-grey-70 u-hover-grey-50 u-radius-3 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Back</a>
+        {% endif %}
+    </section>
+  {% include 'products/footer.html' %}
+</body></html>

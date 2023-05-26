@@ -26,7 +26,11 @@
                       {{product.short_desc}}</p>
                   </div>
                 </div><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":"Add to Cart"}--><!--/options_json-->
-                <a href="" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-product-control u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><!--product_button_content-->Add to Cart<!--/product_button_content--></a><!--/product_button--><!--product_price-->
+                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+              {{cart_product_form}}
+              {% csrf_token %}
+              <input type="submit" value="Add to cart" class="u-btn u-button-style u-custom-color-2 u-hover-custom-color-4 u-product-control u-btn-2">
+                </form>
                 <div class="u-hover-feature u-product-control u-product-price u-product-price-1">
                   <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
                     <div class="u-hide-price u-old-price"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
