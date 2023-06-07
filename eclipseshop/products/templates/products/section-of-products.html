@@ -42,31 +42,7 @@
             </div>
             {% endfor %}<!--/product_item--><!--product_item-->
           </div>
-          <div class="u-list-control"><!--products_pagination--><!--products_pagination_options_json--><!--{"ul":"style=\"\" class=\"responsive-style1 u-pagination u-unstyled\"","li":"style=\"\" class=\"u-nav-item u-pagination-item\"","link":"style=\"padding: 16px 28px;\" class=\"u-button-style u-nav-link\""}--><!--/products_pagination_options_json-->
-            <ul class="responsive-style1 u-pagination u-unstyled">
-              <li class="disabled prev u-nav-item u-pagination-item">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">〈</a>
-              </li>
-              <li class="active u-nav-item u-pagination-item">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">1</a>
-              </li>
-              <li class="u-nav-item u-pagination-item">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">2</a>
-              </li>
-              <li class="u-nav-item u-pagination-item">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">3</a>
-              </li>
-              <li class="u-nav-item u-pagination-item u-pagination-separator">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">...</a>
-              </li>
-              <li class="u-nav-item u-pagination-item">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">8</a>
-              </li>
-              <li class="next u-nav-item u-pagination-item">
-                <a class="u-button-style u-nav-link" href="#" style="padding: 16px 28px;">〉</a>
-              </li>
-            </ul><!--/products_pagination-->
-          </div>
+          {% include 'products/pagination.html' with queryset=products custom_range=custom_range %}
         </div><!--/products-->
       </div>
     </section>

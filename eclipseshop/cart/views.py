@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 from products.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
@@ -23,6 +24,7 @@ def cart_remove(request, product_id):
     cart.remove(product)
     return redirect('cart:cart_detail')
 
+@login_required(login_url='login-register')
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'cart/cart.html', {'cart': cart})
